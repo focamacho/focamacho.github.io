@@ -1,0 +1,4 @@
+ErrorDocument 404 https://focamacho.com
+ErrorDocument 403 https://focamacho.com
+
+Options -Indexes

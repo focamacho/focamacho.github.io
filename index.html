@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Focamacho</title>
+		<link rel="icon" href="./images/avatar.png">
+		<script src="blinkingstars.js"></script>
+		<style>
+			body { 
+				text-align: center;
+				background-color: black;
+				color: white;
+			}
+			div {
+				height: 200px;
+				width: 400px;
+				background: rgba(0,0,0,.0);
+
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				margin-top: -100px;
+				margin-left: -200px;
+			}
+			#discord-icon {
+				position: absolute;
+				top:    -20%;
+				left:   10%;
+				-webkit-transform: rotate(-12deg);
+				-moz-transform: rotate(-12deg);
+				-o-transform: rotate(-12deg);
+				-ms-transform: rotate(-12deg);
+				transform: rotate(-12deg);
+			}
+			button {
+				font-size: 30px;
+				background-color: black;
+				color: white;
+				cursor: pointer;
+			}
+			div.staticstars {
+				background:#000 url(images/stars.png) repeat top center;
+				background-attachment: fixed;
+
+				position: fixed;
+				top:    10%;
+				left:   10%;
+				float: left;
+				width: 100%;
+				height: 100%;
+				display: block;
+				z-index: -1;
+			}
+			div.rainbow {
+				background-image: url("images/rainbow.png");
+				background-repeat: no-repeat;
+				
+				position: fixed;
+				top:    10%;
+				left:   10%;
+				float: left;
+				width: 100%;
+				height: 100%;
+				display: block;
+				z-index: -1;
+				opacity: 0.4;
+			}
+			div.blinkingstar {
+				-webkit-animation: blinkingstar 10s infinite; animation: blinkingstar 10s infinite;
+			}
+			@-webkit-keyframes blinkingstar {
+				0% {opacity: 1;}
+				2% {opacity: 0.3;}
+				4% {opacity: 1;}
+			}
+			@keyframes blinkingstar {
+				0% {opacity: 1;}
+				2% {opacity: 0.3;}
+				4% {opacity: 1;}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="staticstars" id="blinkingstars"></div>
+		<div class="rainbow" id="rainbow"></div>
+	
+		<div>
+			<img class="first" src="./images/avatar.png" height="128px" width="128px"></img>
+			<br>
+			<br>
+			<img class="second" src="images/goose.gif" hidden="true"></img>
+			<button class="first" type="button" onclick="onClick()">Focamacho</button>
+		</div>
+
+		<script>
+			function onClick() {
+				for(element of document.getElementsByClassName('first')) element.hidden = 'true';
+				for(element of document.getElementsByClassName('second')) element.hidden = '';
+
+				let audioNames = ['beat-do-rei-leao-megatron.mp3', 'funk-rave-infinity.mp3', 'mc-maha-cebolinha.mp3', 'luckhaos-strogonoff-de-tatu.mp3', 'mc-maha-kurapika.mp3'];
+				
+				let random = Math.floor(Math.random() * 5);
+				new Audio('audio/' + audioNames[random]).play();
+			}
+		</script>
+	</body>
+</html>

@@ -2,6 +2,7 @@ body {
 	text-align: center;
 	background-color: black;
 	color: white;
+	font-family: 'Road Rage', cursive;
 }
 
 button {
@@ -13,7 +14,6 @@ button {
 
 p {
 	font-size: 40px;
-	font-family: 'Road Rage', cursive;
 }
 
 .center {

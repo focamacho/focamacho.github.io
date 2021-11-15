@@ -88,6 +88,10 @@ div.blinkingstar {
 }
 
 @media (max-width: 1300px) {
+	p {
+		font-size: 30px;
+	}
+	
     div.staticstars {
 		top: 15%;
 		left: 15%;

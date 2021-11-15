@@ -38,6 +38,9 @@
 				color: white;
 				cursor: pointer;
 			}
+			p {
+				font-size: 24px;
+			}
 			div.staticstars {
 				background:#000 url(images/stars.png) repeat top center;
 				background-attachment: fixed;
@@ -84,18 +87,26 @@
 		<div class="staticstars" id="blinkingstars"></div>
 		<div class="rainbow" id="rainbow"></div>
 	
-		<div>
+		<div id="mainDiv">
 			<img class="first" src="./images/avatar.png" height="128px" width="128px"></img>
-			<br>
-			<br>
+			<br class="first">
+			<br class="first">
+			<p class="second" hidden="true">Meet Juninho, the goose!</p>
 			<img class="second" src="images/goose.gif" hidden="true"></img>
-			<button class="first" type="button" onclick="onClick()">Focamacho</button>
+			<p class="second" hidden="true">
+				Do you like his moves?
+				<br/>
+				If you're looking for info about me, check out my <a href="https://github.com/focamacho">GitHub</a>.
+			</p>
+			<button class="first"type="button" onclick="onClick()">Focamacho</button>
 		</div>
 
 		<script>
 			function onClick() {
 				for(element of document.getElementsByClassName('first')) element.hidden = 'true';
 				for(element of document.getElementsByClassName('second')) element.hidden = '';
+
+				document.getElementById('mainDiv').style.top = '40%';
 
 				let audioNames = ['beat-do-rei-leao-megatron.mp3', 'funk-rave-infinity.mp3', 'mc-maha-cebolinha.mp3', 'luckhaos-strogonoff-de-tatu.mp3', 'mc-maha-kurapika.mp3'];
 				

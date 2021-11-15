@@ -86,3 +86,39 @@ div.blinkingstar {
 		opacity: 1;
 	}
 }
+
+@media (max-width: 1300px) {
+    div.staticstars {
+		top: 15%;
+		left: 15%;
+	}
+	
+	div.rainbow {
+		top: 15%;
+		left: 15%;
+	}
+}
+
+@media (max-width: 900px) {
+    div.staticstars {
+		top: 30%;
+		left: 30%;
+	}
+	
+	div.rainbow {
+		top: 30%;
+		left: 30%;
+	}
+}
+
+@media (max-width: 450px) {
+    div.staticstars {
+		top: 60%;
+		left: 60%;
+	}
+	
+	div.rainbow {
+		top: 60%;
+		left: 60%;
+	}
+}

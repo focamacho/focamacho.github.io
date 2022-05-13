@@ -46,7 +46,13 @@
 
 		<script>
 			let isGooseAlive = true;
-			let music;
+			
+			const audioNames = ['beat-do-rei-leao-megatron.mp3', 'funk-rave-infinity.mp3', 'mc-maha-cebolinha.mp3', 'luckhaos-strogonoff-de-tatu.mp3', 'mc-maha-kurapika.mp3'];
+			const random = Math.floor(Math.random() * audioNames.length);
+			const music = new Audio('audio/' + audioNames[random]);
+		
+			const shotSound = new Audio('audio/gunshot.mp3');
+			const gooseSound = new Audio('audio/goose.mp3');
 		
 			function onClickButton() {
 				for(element of document.getElementsByClassName('first')) element.hidden = 'true';
@@ -54,10 +60,6 @@
 
 				document.getElementById('mainDiv').style.top = '34%';
 
-				let audioNames = ['beat-do-rei-leao-megatron.mp3', 'funk-rave-infinity.mp3', 'mc-maha-cebolinha.mp3', 'luckhaos-strogonoff-de-tatu.mp3', 'mc-maha-kurapika.mp3'];
-				
-				const random = Math.floor(Math.random() * 5);
-				music = new Audio('audio/' + audioNames[random]);
 				music.play();
 			}
 			
@@ -66,8 +68,8 @@
 					isGooseAlive = false;
 					music.pause();
 					
-					new Audio('audio/gunshot.mp3').play();
-					new Audio('audio/goose.mp3').play();
+					shotSound.play();
+					gooseSound.play();
 					
 					for(element of document.getElementsByClassName('custom-cursor')) element.style.cursor = 'auto';
 					document.getElementById('goose').src = 'images/dedgoose.png';
